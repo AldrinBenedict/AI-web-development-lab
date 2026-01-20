@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container" >
+        <h1>Event Registration Form</h1>
+
+        <h3>Event Image</h3>
+        <img src="./OIP.webp" alt="Event Banner" class="center-img">
+
+        <h3>Event Video</h3>
+        <video controls class="center-video">
+            <source src="./1000156470.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h3>Register Here</h3>
+        <form class="form-box">
+            <label>First Name</label>
+            <input type="text" placeholder="Enter your name" required>
+
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" required>
+
+            <label>Event Date</label>
+            <input type="date" required>
+
+            <label>Gender</label>
+            <div class="radio-group">
+                <input type="radio" name="gender"> Male
+                <input type="radio" name="gender"> Female
+            </div>
+
+            <label>Event Type</label>
+            <select>
+                <option>Class A</option>
+                <option>Class B</option>
+                <option>Class C</option>
+            </select>
+
+            <label>Address</label>
+            <textarea placeholder="Enter your address"></textarea>
+
+            <label>ID Proof</label>
+            <input type="file">
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>
