@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cake Order Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 class="main-title">🎂 Sweet Bakery Cake Order</h1>
+
+<div class="container">
+    <h2>Order Your Cake</h2>
+
+    <label>Select Cake Type:</label><br>
+    <select id="cakeType">
+        <option value="500">Chocolate - ₹500</option>
+        <option value="400">Vanilla - ₹400</option>
+        <option value="600">Red Velvet - ₹600</option>
+        <option value="700">Black Forest - ₹700</option>
+    </select><br>
+
+    <label>Quantity:</label><br>
+    <input type="number" id="quantity" placeholder="Enter quantity"><br>
+
+    <label>Extra Candles (₹20 each):</label><br>
+    <input type="number" id="candles" placeholder="Enter number of candles"><br>
+
+    <button onclick="calculateTotal()">Calculate Total</button>
+
+    <h3 id="totalAmount"></h3>
+</div>
+
+<script>
+function calculateTotal() {
+    let cakePrice = parseInt(document.getElementById("cakeType").value);
+    let quantity = parseInt(document.getElementById("quantity").value);
+    let candles = parseInt(document.getElementById("candles").value);
+
+    if(isNaN(quantity)) quantity = 0;
+    if(isNaN(candles)) candles = 0;
+
+    let total = (cakePrice * quantity) + (candles * 20);
+
+    document.getElementById("totalAmount").innerHTML =
+        "Total Amount: ₹ " + total;
+}
+</script>
+
+</body>
+</html>
