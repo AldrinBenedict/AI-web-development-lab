@@ -1,63 +1,84 @@
+/* Full Page Background */
 body {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #ffdde1, #ee9ca7);
     text-align: center;
-    padding: 50px;
-}
 
-.container {
-    width: 400px;
-    margin: auto;
-    padding: 25px;
-    border-radius: 15px;
-    color: white;
-
-    background: url('https://images.unsplash.com/photo-1551024601-bec78aea704b') no-repeat center;
+    background: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa') no-repeat center center fixed;
     background-size: cover;
-
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: darken;
-
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.container:hover {
+/* Title Styling */
+.main-title {
+    margin-top: 40px;
+    font-size: 40px;
+    color: white;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    transition: 0.3s ease;
+}
+
+/* Title Hover */
+.main-title:hover {
     transform: scale(1.05);
-    box-shadow: 0px 0px 25px rgba(0,0,0,0.8);
+    color: #d4f1f9;
 }
 
-input, select {
-    padding: 8px;
-    margin: 10px;
+/* Glass Container */
+.container {
+    width: 420px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 20px;
+
+    /* Liquid Glass Effect */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+    color: white;
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Container Hover Effect */
+.container:hover {
+    transform: scale(1.06);
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.7);
+}
+
+/* Inputs */
+input {
+    padding: 10px;
+    margin: 12px;
     width: 85%;
-    border-radius: 5px;
+    border-radius: 8px;
     border: none;
+    outline: none;
 }
 
+/* Button */
 button {
-    padding: 10px 15px;
-    background-color: #ff4d6d;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: linear-gradient(45deg, #007bff, #00c6ff);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
+    transition: 0.3s ease;
 }
 
+/* Button Hover */
 button:hover {
-    background-color: #e60039;
     transform: scale(1.1);
+    background: linear-gradient(45deg, #00c6ff, #007bff);
 }
 
 h2 {
     margin-bottom: 20px;
-}
-.main-title {
-    text-align: center;
-    font-size: 36px;
-    color: #b3003b;
-    margin-bottom: 30px;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }

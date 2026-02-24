@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Loan EMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 class="main-title">🏦 Bank Loan EMI Calculator</h1>
+
+<div class="container">
+    <h2>Calculate Your EMI</h2>
+
+    <label>Loan Amount (₹):</label><br>
+    <input type="number" id="loanAmount" placeholder="Enter loan amount"><br>
+
+    <label>Annual Interest Rate (%):</label><br>
+    <input type="number" id="interestRate" placeholder="Enter interest rate"><br>
+
+    <label>Tenure (Years):</label><br>
+    <input type="number" id="tenure" placeholder="Enter tenure in years"><br>
+
+    <button onclick="calculateEMI()">Calculate EMI</button>
+
+    <h3 id="emiResult"></h3>
+</div>
+
+<script>
+function calculateEMI() {
+    let P = parseFloat(document.getElementById("loanAmount").value);
+    let annualRate = parseFloat(document.getElementById("interestRate").value);
+    let years = parseFloat(document.getElementById("tenure").value);
+
+    let R = (annualRate / 12) / 100;
+    let N = years * 12;
+
+    if(P > 0 && R > 0 && N > 0) {
+        let EMI = (P * R * Math.pow(1 + R, N)) /
+                  (Math.pow(1 + R, N) - 1);
+
+        document.getElementById("emiResult").innerHTML =
+            "Monthly EMI: ₹ " + EMI.toFixed(2);
+    }
+}
+</script>
+
+</body>
+</html>
