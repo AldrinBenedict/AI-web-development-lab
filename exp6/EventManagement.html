@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Event Management</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+$(".toggleBtn").click(function(){
+var eventDiv=$(this).closest(".event");
+eventDiv.find(".details").slideToggle();
+var title=eventDiv.find("h3").text();
+alert("Selected Event: "+title);
+eventDiv.css("background","#ffe6ff");
+eventDiv.find("h3").css("color","#ff0066");
+
+if($(this).text()=="Show Details")
+$(this).text("Hide Details");
+else
+$(this).text("Show Details");
+
+});
+
+$(".registerBtn").click(function(){
+var title=$(this).closest(".event").find("h3").text();
+window.location.href="register.html?event="+encodeURIComponent(title);
+
+});
+
+});
+</script>
+</head>
+<body>
+<h1 class="mainTitle"> Upcoming Events </h1>
+<div class="event">
+<h3>Music Fest</h3>
+<p>Date : April 20</p>
+<button class="toggleBtn">Show Details</button>
+<div class="details">
+<p>Live band, DJ night and fun games.</p>
+<button class="registerBtn">Register</button>
+</div>
+</div>
+
+<div class="event">
+
+<h3>Hackathon</h3>
+
+<p>Date : May 5</p>
+
+<button class="toggleBtn">Show Details</button>
+<div class="details">
+<p>24 hour coding competition with prizes.</p>
+<button class="registerBtn">Register</button>
+</div>
+</div>
+
+<div class="event">
+
+<h3>Art Workshop</h3>
+
+<p>Date : June 10</p>
+<button class="toggleBtn">Show Details</button>
+<div class="details">
+<p>Painting and creativity workshop.</p>
+<button class="registerBtn">Register</button>
+
+</div>
+
+</div>
+
+</body>
+</html>

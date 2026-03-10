@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Event Registration</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+
+var params=new URLSearchParams(window.location.search);
+var event=params.get("event");
+
+$("#eventName").val(event);
+$("#submitBtn").click(function(){
+$(".error").text("");
+$("input").css("border","1px solid #ccc");
+
+var name=$("#name").val();
+var email=$("#email").val();
+var mobile=$("#mobile").val();
+var event=$("#eventName").val();
+var valid=true;
+
+if(name==""){
+$("#nameError").text("Enter Name").css("color","red");
+$("#name").css("border","2px solid red");
+valid=false;
+}
+
+var emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if(!emailPattern.test(email)){
+$("#emailError").text("Invalid Email").css("color","red");
+$("#email").css("border","2px solid red");
+valid=false;
+}
+
+var mobilePattern=/^[0-9]{10,}$/;
+
+if(!mobilePattern.test(mobile)){
+$("#mobileError").text("Invalid Mobile").css("color","red");
+$("#mobile").css("border","2px solid red");
+valid=false;
+}
+
+if(valid){
+$("#msg").text("Registration Successful for "+name)
+.css("color","green");
+$("#submitBtn").prop("disabled",true)
+.text("Registered");
+}
+
+});
+
+
+$("#resetBtn").click(function(){
+$("input").not("#eventName").val("");
+$(".error").text("");
+$("#msg").text("");
+$("input").css("border","1px solid #ccc");
+$("#submitBtn").prop("disabled",false)
+.text("Submit");
+});
+
+});
+</script>
+</head>
+<body>
+<h1 class="mainTitle">🎉 Event Registration 🎉</h1>
+<div class="formContainer">
+
+<label>Name</label>
+<input type="text" id="name">
+<span class="error" id="nameError"></span>
+
+<label>Email</label>
+<input type="text" id="email">
+<span class="error" id="emailError"></span>
+
+<label>Event Name</label>
+<input type="text" id="eventName" readonly>
+
+<label>Mobile Number</label>
+<input type="text" id="mobile">
+<span class="error" id="mobileError"></span>
+
+<br>
+
+<button id="submitBtn">Submit</button>
+
+<button id="resetBtn">Reset</button>
+
+<p id="msg"></p>
+
+</div>
+
+</body>
+</html>
