@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ultimate Quiz</title>
+<link rel="stylesheet" href="quizsstyle.css">
+</head>
+<body>
+<div class="quizContainer">
+<h1>⚡ Ultimate Quiz Challenge ⚡</h1>
+<h2 id="timer">Time Left : 10</h2>
+<p id="warning"></p>
+
+<form id="quizForm">
+
+<div class="question">
+<p>1. Who invented Java?</p>
+
+<label><input type="radio" name="q1" value="a"> Dennis Ritchie</label>
+<label><input type="radio" name="q1" value="b"> James Gosling</label>
+<label><input type="radio" name="q1" value="c"> Bjarne Stroustrup</label>
+
+</div>
+
+
+<div class="question">
+<p>2. HTML stands for?</p>
+
+<label><input type="radio" name="q2" value="a"> Hyper Trainer Marking Language</label>
+<label><input type="radio" name="q2" value="b"> Hyper Text Markup Language</label>
+<label><input type="radio" name="q2" value="c"> Hyper Text Marketing Language</label>
+
+</div>
+
+
+<div class="question">
+<p>3. CSS is used for?</p>
+
+<label><input type="radio" name="q3" value="a"> Styling</label>
+<label><input type="radio" name="q3" value="b"> Database</label>
+<label><input type="radio" name="q3" value="c"> Server</label>
+
+</div>
+
+
+<div class="question">
+<p>4. JavaScript runs on?</p>
+
+<label><input type="radio" name="q4" value="a"> Browser</label>
+<label><input type="radio" name="q4" value="b"> Printer</label>
+<label><input type="radio" name="q4" value="c"> Scanner</label>
+
+</div>
+
+
+<div class="question">
+<p>5. React is a?</p>
+
+<label><input type="radio" name="q5" value="a"> Framework</label>
+<label><input type="radio" name="q5" value="b"> Library</label>
+<label><input type="radio" name="q5" value="c"> Language</label>
+
+</div>
+
+<button type="button" onclick="submitQuiz()">Submit</button>
+
+</form>
+<h2 id="result"></h2>
+</div>
+<script src="quizscript.js"></script>
+</body>
+</html>
